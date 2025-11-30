@@ -1,0 +1,13 @@
+# Python files
+.venv
+__pycache__
+chromadb
+
+# Environment files
+.env
+
+# IDE files
+.idea
+
+# Mac files
+.DS_Store
