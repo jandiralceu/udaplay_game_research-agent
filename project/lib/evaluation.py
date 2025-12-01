@@ -1,6 +1,6 @@
 import json
 from typing import List, Optional, Dict, Any
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 
 from project.lib.agents import AgentState
 from project.lib.state_machine import Run
@@ -340,3 +340,12 @@ class AgentEvaluator:
             overall_score=0.0,
             feedback=reason
         )
+
+class EvaluationReport(BaseModel):
+    """Evaluation report for retrieval tool"""
+    model_config = ConfigDict(
+        frozen=True,
+    )
+
+    useful: bool = Field(description="Whether the documents are useful to answer the question")
+    description: str = Field(description="Description about the evaluation result")
