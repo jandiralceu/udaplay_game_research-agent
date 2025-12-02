@@ -13,7 +13,7 @@ class SessionNotFoundError(Exception):
 
 
 @dataclass
-class ShortTermMemory():
+class ShortTermMemory:
     """Manage the history of objects across multiple sessions"""
     sessions: Dict[str, List[Any]] = field(default_factory=lambda: {})
 
