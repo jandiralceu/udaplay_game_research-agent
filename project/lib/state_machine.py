@@ -233,7 +233,7 @@ class StateMachine(Generic[StateSchema]):
             if isinstance(step, EntryPoint):
                 print(f"[StateMachine] Starting: {current_step_id}")
             else:
-                print(f"[StateMachine] Executing step: {current_step_id}")
+                print(f"[StateMachine] Executing step: {current_step_id}, State: {state}, Step: {step}")
 
             # Create and add snapshot to the current run
             snapshot = Snapshot.create(copy.deepcopy(state), self.state_schema, current_step_id)
